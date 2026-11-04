@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Mode Single User / Admin Catatan Hutang Sakuku
+    match /hutangs/{document=**} {
+      allow read, write: if true;
+    }
+    match /cicilan/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+
